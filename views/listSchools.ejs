@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schools List</title>
+</head>
+<body>
+    <h1>Schools Near You</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Distance (km)</th>
+        </tr>
+        <% schools.forEach(school => { %>
+            <tr>
+                <td><%= school.name %></td>
+                <td><%= school.address %></td>
+                <td><%= school.distance.toFixed(2) %></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
