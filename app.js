@@ -95,6 +95,20 @@ app.get("/listSchools" , (req,res) => {
 
 });
 
+
+
+app.get('/showSchool', (req, res) => {
+    const sqlQuery = 'SELECT * FROM schools';
+
+    connection.query(sqlQuery, (err, results) => {
+        if (err) {
+            console.error('Error executing query:', err.message);
+            return res.status(500).send('Server Error');
+        }
+        res.json(results);
+    });
+});
+
 // Start the server
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
