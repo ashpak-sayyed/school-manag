@@ -6,7 +6,7 @@ app.use(express.urlencoded({ extended: true }));
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
-
+const port = process.env.PORT || 4000;
 
 // create connection.
 const connection = mysql.createConnection({
@@ -110,6 +110,6 @@ app.get('/showSchool', (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server is running on port 3000");
 });
